@@ -1,1 +1,1 @@
-EMT FINKI lab exercise 2 - api 
+EMT lab
