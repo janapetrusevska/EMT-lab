@@ -9,6 +9,7 @@ import mk.ukim.finki.lab2.model.exceptions.BookNotFoundException;
 import mk.ukim.finki.lab2.repository.AuthorRepository;
 import mk.ukim.finki.lab2.repository.BookRepository;
 import mk.ukim.finki.lab2.service.BookService;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> findAll() {
         return this.bookRepository.findAll();
+        //PageRequest.of(0, 10)
     }
 
     @Override

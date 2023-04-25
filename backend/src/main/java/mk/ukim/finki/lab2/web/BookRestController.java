@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/books")
 public class BookRestController {
 
@@ -60,8 +60,8 @@ public class BookRestController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/setAvailableCopies/{id}")
-    public ResponseEntity<Book> setAvailableCopies(@PathVariable Long id) {
+    @GetMapping("/AvailableCopies/{id}")
+    public ResponseEntity<Book> AvailableCopies(@PathVariable Long id) {
         return this.bookService.setAvailableCopies(id)
                 .map(book -> ResponseEntity.ok().body(book))
                 .orElseGet(() -> ResponseEntity.noContent().build());

@@ -6,6 +6,8 @@ import mk.ukim.finki.lab2.repository.CountryRepository;
 import mk.ukim.finki.lab2.service.CountryService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CountryServiceImpl implements CountryService {
 
@@ -23,5 +25,10 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public Country create(Country country) {
         return this.countryRepository.save(country);
+    }
+
+    @Override
+    public List<Country> findAll() {
+        return this.countryRepository.findAll();
     }
 }
